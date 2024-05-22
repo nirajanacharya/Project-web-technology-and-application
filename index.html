@@ -1,69 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration Form</title>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Registration Form</title>
     <link rel="stylesheet" href="./css/style.css">
-    <script>
-        function toggleOtherInterest() {
-            var otherCheckbox = document.getElementById('interest-other');
-            var otherInterestInput = document.getElementById('otherInterest');
-            otherInterestInput.style.display = otherCheckbox.checked ? 'block' : 'none';
-        }
-    </script>
-</head>
-<body>
-    <div class="container">
-        <h2>Registration Form</h2>
-        <form action="#" method="POST">
-            <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" required>
-            </div>
-            <div class="form-group">
-                <label for="phone">Phone</label>
-                <input type="text" id="phone" name="phone" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div class="form-group">
-                <label for="interest">Interest</label>
-                <div class="checkbox-group">
-                    <label><input type="checkbox" id="interest-front-end" name="interest[]" value="front-end"> Front-end Development</label>
-                    <label><input type="checkbox" id="interest-back-end" name="interest[]" value="back-end"> Back-end Development</label>
-                    <label><input type="checkbox" id="interest-security" name="interest[]" value="security"> Security Analysis</label>
-                    <label><input type="checkbox" id="interest-networks" name="interest[]" value="networks"> Computer Networks</label>
-                    <label><input type="checkbox" id="interest-other" name="interest[]" value="other" onchange="toggleOtherInterest()"> Other</label>
+    <script src="./script/script.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <h2>Contact Form</h2>
+            <form action="#" method="POST">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name"
+                        placeholder="Your name" required>
                 </div>
-                <input type="text" id="otherInterest" name="otherInterest" placeholder="Specify other interest" style="display: none;">
-            </div>
-            <div class="form-group">
-                <label for="skills">Skills</label>
-                <div class="checkbox-group">
-                    <label><input type="checkbox" name="skills[]" value="HTML"> HTML</label>
-                    <label><input type="checkbox" name="skills[]" value="CSS"> CSS</label>
-                    <label><input type="checkbox" name="skills[]" value="javascript"> JavaScript</label>
-                    <label><input type="checkbox" name="skills[]" value="python"> Python</label>
-                    <label><input type="checkbox" name="skills[]" value="java"> Java</label>
-                    <label><input type="checkbox" name="skills[]" value="php"> PHP</label>
+                <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <input type="text" id="phone" name="phone"
+                        placeholder="Your Phone no." required>
                 </div>
-            </div>
-            <div class="form-group">
-                <label for="country">Country</label>
-                <select id="country" name="country" required>
-                    <option value="">Select Country</option>
-                    <option value="USA">United States</option>
-                    <option value="UK">United Kingdom</option>
-                    <option value="Canada">Canada</option>
-                    <option value="Australia">Australia</option>
-                    <option value="Germany">Germany</option>
-                </select>
-            </div>
-            <button type="submit">Submit</button>
-        </form>
-    </div>
-</body>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email"
+                        placeholder="Your Email" required>
+                </div>
+                <div class="form-group gender-group">
+                    <label id="gender">Gender</label>
+                    <input type="radio" name="gender" id="male" value="male">
+                    <label for="male">Male</label>
+                    <input type="radio" name="gender" id="female"
+                        value="female">
+                    <label for="female">Female</label>
+                    <input type="radio" name="gender" id="other" value="other">
+                    <label for="other">Rather not say</label>
+                </div>
+                <div class="form-group">
+                    <label for="interest">Interest</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" id="interest-front-end"
+                                name="interest[]" value="front-end">
+                            Front-end</label>
+                        <label><input type="checkbox" id="interest-back-end"
+                                name="interest[]" value="back-end">
+                            Back-end</label>
+                        <label><input type="checkbox" id="interest-security"
+                                name="interest[]" value="security">
+                            Security</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" id="interest-networks"
+                                name="interest[]" value="networks">
+                            Networks</label>
+                        <label><input type="checkbox" id="interest-other"
+                                name="interest[]" value="other"
+                                onchange="toggleOtherInterest()"> Other</label>
+                    </div>
+                    <input type="text" id="otherInterest" name="otherInterest"
+                        placeholder="Specify other interest">
+                </div>
+                <div class="form-group">
+                    <label for="skills">Skills</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="skills[]"
+                                value="HTML"> HTML</label>
+                        <label><input type="checkbox" name="skills[]"
+                                value="CSS"> CSS</label>
+                        <label><input type="checkbox" name="skills[]"
+                                value="javascript"> JavaScript</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="skills[]"
+                                value="python"> Python</label>
+                        <label><input type="checkbox" name="skills[]"
+                                value="java"> Java</label>
+                        <label><input type="checkbox" name="skills[]"
+                                value="php"> PHP</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="country">Country</label>
+                    <select id="country" name="country" required>
+                        <option value>Select Country</option>
+                        <option value="Nepal">Nepal</option>
+                        <option value="India">India</option>
+                        <option value="Bhutan">Bhutan</option>
+                        <option value="Finland">Finland</option>
+                        <option value="USA">United States</option>
+                        <option value="UK">United Kingdom</option>
+                        <option value="Canada">Canada</option>
+                        <option value="Australia">Australia</option>
+                        <option value="Germany">Germany</option>
+                    </select>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </body>
 </html>
