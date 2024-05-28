@@ -4,84 +4,68 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Registration Form</title>
-    <link rel="stylesheet" href="./css/style.css">
-    <script src="./script/script.js"></script>
+        <link rel="stylesheet" href="./css/style.css">
+        <script src="./script/script.js" defer></script>
     </head>
     <body>
         <div class="container">
             <h2>Contact Form</h2>
-            <form action="#" method="POST">
+            <form id="contactForm" action="#" method="POST">
                 <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name"
-                        placeholder="Your name" required>
+                    <label for="name" id ="nameCheck">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Your name">
+                    <div id="nameError" class="error"></div>
                 </div>
                 <div class="form-group">
                     <label for="phone">Phone</label>
-                    <input type="text" id="phone" name="phone"
-                        placeholder="Your Phone no." required>
+                    <input type="text" id="phone" name="phone" placeholder="Your Phone no.">
+                    <div id="phoneError" class="error"></div>
                 </div>
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="email" id="email" name="email"
-                        placeholder="Your Email" required>
+                    <input type="email" id="email" name="email" placeholder="Your Email">
+                    <div id="emailError" class="error"></div>
                 </div>
                 <div class="form-group gender-group">
                     <label id="gender">Gender</label>
                     <input type="radio" name="gender" id="male" value="male">
                     <label for="male">Male</label>
-                    <input type="radio" name="gender" id="female"
-                        value="female">
+                    <input type="radio" name="gender" id="female" value="female">
                     <label for="female">Female</label>
                     <input type="radio" name="gender" id="other" value="other">
                     <label for="other">Rather not say</label>
+                    <div id="genderError" class="error"></div>
                 </div>
+                
                 <div class="form-group">
                     <label for="interest">Interest</label>
                     <div class="checkbox-group">
-                        <label><input type="checkbox" id="interest-front-end"
-                                name="interest[]" value="front-end">
-                            Front-end</label>
-                        <label><input type="checkbox" id="interest-back-end"
-                                name="interest[]" value="back-end">
-                            Back-end</label>
-                        <label><input type="checkbox" id="interest-security"
-                                name="interest[]" value="security">
-                            Security</label>
+                        <label><input type="checkbox" id="interest-front-end" name="interest[]" value="front-end"> Front-end</label>
+                        <label><input type="checkbox" id="interest-back-end" name="interest[]" value="back-end"> Back-end</label>
+                        <label><input type="checkbox" id="interest-security" name="interest[]" value="security"> Security</label>
                     </div>
                     <div class="checkbox-group">
-                        <label><input type="checkbox" id="interest-networks"
-                                name="interest[]" value="networks">
-                            Networks</label>
-                        <label><input type="checkbox" id="interest-other"
-                                name="interest[]" value="other"
-                                onchange="toggleOtherInterest()"> Other</label>
+                        <label><input type="checkbox" id="interest-networks" name="interest[]" value="networks"> Networks</label>
+                        <label><input type="checkbox" id="interest-other" name="interest[]" value="other"> Other</label>
                     </div>
-                    <input type="text" id="otherInterest" name="otherInterest"
-                        placeholder="Specify other interest">
+                    <input type="text" id="otherInterest" name="otherInterest" placeholder="Specify other interest">
                 </div>
                 <div class="form-group">
                     <label for="skills">Skills</label>
                     <div class="checkbox-group">
-                        <label><input type="checkbox" name="skills[]"
-                                value="HTML"> HTML</label>
-                        <label><input type="checkbox" name="skills[]"
-                                value="CSS"> CSS</label>
-                        <label><input type="checkbox" name="skills[]"
-                                value="javascript"> JavaScript</label>
+                        <label><input type="checkbox" name="skills[]" value="HTML"> HTML</label>
+                        <label><input type="checkbox" name="skills[]" value="CSS"> CSS</label>
+                        <label><input type="checkbox" name="skills[]" value="javascript"> JavaScript</label>
                     </div>
                     <div class="checkbox-group">
-                        <label><input type="checkbox" name="skills[]"
-                                value="python"> Python</label>
-                        <label><input type="checkbox" name="skills[]"
-                                value="java"> Java</label>
-                        <label><input type="checkbox" name="skills[]"
-                                value="php"> PHP</label>
+                        <label><input type="checkbox" name="skills[]" value="python"> Python</label>
+                        <label><input type="checkbox" name="skills[]" value="java"> Java</label>
+                        <label><input type="checkbox" name="skills[]" value="php"> PHP</label>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="country">Country</label>
-                    <select id="country" name="country" required>
+                    <select id="country" name="country">
                         <option value>Select Country</option>
                         <option value="Nepal">Nepal</option>
                         <option value="India">India</option>
@@ -94,7 +78,7 @@
                         <option value="Germany">Germany</option>
                     </select>
                 </div>
-                <button type="submit">Submit</button>
+                <button type="submit" value="click" onclick="validateForm()">Submit</button>
             </form>
         </div>
     </body>

@@ -9,7 +9,7 @@ body {
 }
 
 
-.container {
+.container  {
     width: 650px;
     background-color: #fff;
     padding: 30px;
@@ -103,5 +103,88 @@ button {
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #040405;
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .gender-group {
+        padding: 6px;
+        font-size: 12px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    select,
+    input[type="password"] {
+        width: 100%;
+    }
+
+    button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        padding: 10px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    select,
+    input[type="password"] {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    button {
+        padding: 10px;
+        font-size: 16px;
+    }
+
+    .gender-group {
+        padding: 6px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 320px) {
+    body {
+        color: aquamarine
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    select,
+    input[type="password"] {
+        padding: 6px;
+        font-size: 12px;
+    }
+
+    button {
+        padding: 8px;
+        font-size: 14px;
+    }
+    .error-message {
+        color: red;
+    }
+    
+    gender
+    .gender-group {
+        padding: 6px;
+        font-size: 12px;
+    }
 }
